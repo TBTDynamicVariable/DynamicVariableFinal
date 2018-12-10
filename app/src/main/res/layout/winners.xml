@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/popup_element"
     android:layout_width="240dp"
     android:layout_height="400dp"
@@ -41,6 +42,7 @@
         android:fontFamily="@font/lobster"
         android:text="Your Score:"
         android:textSize="38sp" />
+
 
 
 </RelativeLayout>

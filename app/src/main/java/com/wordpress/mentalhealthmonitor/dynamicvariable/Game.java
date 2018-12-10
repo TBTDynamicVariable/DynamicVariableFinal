@@ -4,7 +4,6 @@ import android.app.ActionBar;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.CountDownTimer;
-import android.support.annotation.DrawableRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -13,7 +12,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.provider.MediaStore;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -50,7 +48,7 @@ public class Game extends AppCompatActivity {
 
     TextView timerTextView;
     private CountDownTimer countDownTimer;
-    private long timeRemaining = 90000; //90 sec;
+    private long timeRemaining = 9000; //90 sec;
     private boolean timerRunning;
 
     @Override
@@ -162,6 +160,7 @@ public class Game extends AppCompatActivity {
 
                         //t2.setText("INCORRECT! Try Again");
                         input.setText(null);
+                        TerrorView.setVisibility(View.INVISIBLE);
                         GenerateEq();
                         // Here is where we will do the picture, and go from there
                     }
@@ -377,11 +376,6 @@ public class Game extends AppCompatActivity {
 
 
     }
-    private void dispatchTakePictureIntent() {
-        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
-            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
-        }
-    }
+
 
 }

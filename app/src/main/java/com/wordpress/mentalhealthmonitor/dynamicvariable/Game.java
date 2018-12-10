@@ -48,7 +48,7 @@ public class Game extends AppCompatActivity {
 
     TextView timerTextView;
     private CountDownTimer countDownTimer;
-    private long timeRemaining = 9000; //90 sec;
+    private long timeRemaining = 30000; //90 sec;
     private boolean timerRunning;
 
     @Override
@@ -107,6 +107,7 @@ public class Game extends AppCompatActivity {
                 input.setCursorVisible(false);
                 input.setKeyListener(null);
                 input.setBackgroundColor(Color.TRANSPARENT);
+                TerrorView.setVisibility(View.INVISIBLE);
                 showWinners();
             }
         }.start();
@@ -160,7 +161,8 @@ public class Game extends AppCompatActivity {
 
                         //t2.setText("INCORRECT! Try Again");
                         input.setText(null);
-                        TerrorView.setVisibility(View.INVISIBLE);
+                        TerrorView.setVisibility(View.VISIBLE);
+                        TerrorView.setImageDrawable(getResources().getDrawable(R.drawable.wrong));
                         GenerateEq();
                         // Here is where we will do the picture, and go from there
                     }

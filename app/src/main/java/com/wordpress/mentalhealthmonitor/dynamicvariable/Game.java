@@ -4,12 +4,14 @@ import android.app.ActionBar;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.CountDownTimer;
+import android.support.annotation.DrawableRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.provider.MediaStore;
 
@@ -34,8 +36,7 @@ import android.widget.Toast;
 
 public class Game extends AppCompatActivity {
 
-
-
+    ImageView TerrorView;
     int counter; //Number of correct answers after timer ends
     private Button control; //Pauses or starts game
     TextView equation; //Text that diplays equation
@@ -62,8 +63,10 @@ public class Game extends AppCompatActivity {
         input = (EditText) findViewById(R.id.editText);
         equation  = (TextView) findViewById(R.id.equationView);
         timerTextView = (TextView) findViewById(R.id.timertextView);
+        TerrorView = (ImageView) findViewById(R.id.terrorview);
 
         control = (Button) findViewById(R.id.StartPause); //For timer
+        TerrorView.setVisibility(View.INVISIBLE);
         //control.setText("START");
 
 
@@ -149,6 +152,8 @@ public class Game extends AppCompatActivity {
                     if (answer==result){
                         //t2.setText("CORRECT");
                         input.setText(null);
+                        TerrorView.setImageDrawable(getResources().getDrawable(R.drawable.startview));
+                        TerrorView.setVisibility(View.VISIBLE);
                         GenerateEq();
                         counter++;
                     }

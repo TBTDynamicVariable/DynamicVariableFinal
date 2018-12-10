@@ -1,5 +1,6 @@
 package com.wordpress.mentalhealthmonitor.dynamicvariable;
 
+import android.media.MediaPlayer;
 import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private Button toGame;
     private Button toSettingsBut;
     private Button toInstructions;
+    MediaPlayer music;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

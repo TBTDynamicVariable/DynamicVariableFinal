@@ -21,6 +21,7 @@ public class MySettings extends AppCompatActivity {
         VolumeOnButton = (Button) findViewById(R.id.VolumeOn);
         VolumeOffButton = (Button) findViewById(R.id.VolumeOff);
         music=MediaPlayer.create(MySettings.this,R.raw.song);
+
         toMain = (Button) findViewById(R.id.mainButSettings);
 
 
@@ -31,6 +32,18 @@ public class MySettings extends AppCompatActivity {
                 openMain();
             }
         });
+        VolumeOnButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                clkplay();
+            }
+        });
+        VolumeOffButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                clkpause();
+            }
+        });
 
 
     }
@@ -39,12 +52,12 @@ public class MySettings extends AppCompatActivity {
     }
 
 
-    public void clkplay(View v){
+    public void clkplay(){
         music.start();
         music.setLooping(true);//This turns the volume on
 
     }
-    public void clkpause(View v){
+    public void clkpause(){
         music.pause();//Thus turns the volume off
     }
 }

@@ -67,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+    //This is a comment
     public void openGame(){
         Intent intent = new Intent(this, Game.class);
         startActivity(intent);

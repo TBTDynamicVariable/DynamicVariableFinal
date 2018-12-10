@@ -1,12 +1,9 @@
 package com.wordpress.mentalhealthmonitor.dynamicvariable;
 
-import android.media.Image;
-import android.media.MediaPlayer;
-import android.provider.Settings;
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.WindowInsets;
 import android.widget.Button;
 import android.content.Intent;
 import android.widget.ImageButton;
@@ -32,11 +29,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        facePic = (ImageView) findViewById(R.id.imageView2);
-        takePic = (ImageButton) findViewById(R.id.takePic);
-        toGame = (Button) findViewById(R.id.toGameButton);
-        toSettingsBut = (Button) findViewById(R.id.toSettings);
-        toInstructions = (Button) findViewById(R.id.toInstructoionsButtton);
+        facePic = findViewById(R.id.imageView2);
+        takePic = findViewById(R.id.takePic);
+        toGame = findViewById(R.id.toGameButton);
+        toSettingsBut = findViewById(R.id.toSettings);
+        toInstructions = findViewById(R.id.toInstructoionsButtton);
 
 
 

@@ -15,8 +15,8 @@ private Button toMain;
         setContentView(R.layout.activity_instructions);
 
 
-        toMain = (Button) findViewById(R.id.buttonMainInstruct);
-        toGame = (Button) findViewById(R.id.gameButInstructions);
+        toMain = findViewById(R.id.buttonMainInstruct);
+        toGame = findViewById(R.id.gameButInstructions);
         toGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

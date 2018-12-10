@@ -1,6 +1,5 @@
 package com.wordpress.mentalhealthmonitor.dynamicvariable;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,11 +17,11 @@ public class MySettings extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_settings);
 
-        VolumeOnButton = (Button) findViewById(R.id.VolumeOn);
-        VolumeOffButton = (Button) findViewById(R.id.VolumeOff);
+        VolumeOnButton = findViewById(R.id.VolumeOn);
+        VolumeOffButton = findViewById(R.id.VolumeOff);
         music=MediaPlayer.create(MySettings.this,R.raw.song);
 
-        toMain = (Button) findViewById(R.id.mainButSettings);
+        toMain = findViewById(R.id.mainButSettings);
 
 
 

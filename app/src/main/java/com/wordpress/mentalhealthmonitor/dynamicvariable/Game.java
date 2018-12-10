@@ -1,7 +1,6 @@
 package com.wordpress.mentalhealthmonitor.dynamicvariable;
 
-import android.app.ActionBar;
-import android.content.Intent;
+
 import android.graphics.Color;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
@@ -12,22 +11,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.util.Random;
 import android.content.Context;
-import android.graphics.drawable.ColorDrawable;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.Button;
 import android.widget.PopupWindow;
 import java.io.IOException;
-import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -58,12 +49,12 @@ public class Game extends AppCompatActivity {
 
 
 
-        input = (EditText) findViewById(R.id.editText);
-        equation  = (TextView) findViewById(R.id.equationView);
-        timerTextView = (TextView) findViewById(R.id.timertextView);
-        TerrorView = (ImageView) findViewById(R.id.terrorview);
+        input = findViewById(R.id.editText);
+        equation  = findViewById(R.id.equationView);
+        timerTextView = findViewById(R.id.timertextView);
+        TerrorView = findViewById(R.id.terrorview);
 
-        control = (Button) findViewById(R.id.StartPause); //For timer
+        control = findViewById(R.id.StartPause); //For timer
         TerrorView.setVisibility(View.INVISIBLE);
         //control.setText("START");
 
@@ -348,7 +339,7 @@ public class Game extends AppCompatActivity {
         pw.setFocusable(true);
         pw.update();
         pw.showAtLocation(layout, Gravity.CENTER, 0, 0);
-        ((Button) layout.findViewById(R.id.menubutton)).setOnClickListener(new View.OnClickListener() {
+        layout.findViewById(R.id.menubutton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
              pw.dismiss();

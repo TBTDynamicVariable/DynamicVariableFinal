@@ -49,8 +49,7 @@ public class MySettings extends AppCompatActivity {
 
 
     }
-    public void openMain(){
-       finish();
+    public void openMain(){ finish();
     }
 
 

@@ -25,12 +25,10 @@ import android.widget.Toast;
 
 public class Game extends AppCompatActivity {
 
-    ImageView TerrorView;
     int counter; //Number of correct answers after timer ends
     private Button control; //Pauses or starts game
     TextView equation; //Text that diplays equation
     EditText input; //User input answer
-    static final int REQUEST_IMAGE_CAPTURE = 1; // Used to take a picture
 
 
 
@@ -52,10 +50,8 @@ public class Game extends AppCompatActivity {
         input = findViewById(R.id.editText);
         equation  = findViewById(R.id.equationView);
         timerTextView = findViewById(R.id.timertextView);
-        TerrorView = findViewById(R.id.terrorview);
 
         control = findViewById(R.id.StartPause); //For timer
-        TerrorView.setVisibility(View.INVISIBLE);
         //control.setText("START");
 
 
@@ -98,7 +94,6 @@ public class Game extends AppCompatActivity {
                 input.setCursorVisible(false);
                 input.setKeyListener(null);
                 input.setBackgroundColor(Color.TRANSPARENT);
-                TerrorView.setVisibility(View.INVISIBLE);
                 showWinners();
             }
         }.start();
@@ -142,8 +137,6 @@ public class Game extends AppCompatActivity {
                     if (answer==result){
                         //t2.setText("CORRECT");
                         input.setText(null);
-                        TerrorView.setImageDrawable(getResources().getDrawable(R.drawable.startview));
-                        TerrorView.setVisibility(View.VISIBLE);
                         GenerateEq();
                         counter++;
                     }
@@ -152,8 +145,6 @@ public class Game extends AppCompatActivity {
 
                         //t2.setText("INCORRECT! Try Again");
                         input.setText(null);
-                        TerrorView.setVisibility(View.VISIBLE);
-                        TerrorView.setImageDrawable(getResources().getDrawable(R.drawable.wrong));
                         GenerateEq();
                         // Here is where we will do the picture, and go from there
                     }

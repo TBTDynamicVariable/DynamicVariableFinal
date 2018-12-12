@@ -1,5 +1,7 @@
 package com.wordpress.mentalhealthmonitor.dynamicvariable;
 
+import android.content.Context;
+import android.media.AudioManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -20,6 +22,7 @@ public class MySettings extends AppCompatActivity {
         VolumeOnButton = findViewById(R.id.VolumeOn);
         VolumeOffButton = findViewById(R.id.VolumeOff);
         music=MediaPlayer.create(MySettings.this,R.raw.song);
+        final AudioManager ourMusic = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
 
         toMain = findViewById(R.id.mainButSettings);
 
@@ -34,13 +37,13 @@ public class MySettings extends AppCompatActivity {
         VolumeOnButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                clkplay();
+                clkplay(ourMusic);
             }
         });
         VolumeOffButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                clkpause();
+                clkpause(ourMusic);
             }
         });
 
@@ -51,12 +54,12 @@ public class MySettings extends AppCompatActivity {
     }
 
 
-    public void clkplay(){
+    public void clkplay(AudioManager inputMusic){
         music.start();
-        music.setLooping(true);//This turns the volume on
+        inputMusic.adjustStreamVolume(AudioManager.STREAM_MUSIC, AudioManager.ADJUST_UNMUTE,0);
 
     }
-    public void clkpause(){
-        music.pause();//Thus turns the volume off
+    public void clkpause(AudioManager inputMusic){
+        inputMusic.adjustStreamVolume(AudioManager.STREAM_MUSIC, AudioManager.ADJUST_MUTE,0);
     }
 }
